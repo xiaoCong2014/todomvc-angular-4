@@ -22,9 +22,28 @@ export class TodoDataService {
   addTodo(todo: Todo): TodoDataService {
     if (!todo.id) {
       todo.id = this.lastId + 1;
+    } else {
+      ;
     }
+
     this.todos.push(todo);
     return this;
+  }
+
+  /**
+   *
+   * @param {Todo} todo
+   * @returns {number} 最新的id
+   */
+  addOne(todo: Todo): number {
+    if (!todo.id) {
+      todo.id = this.lastId + 1;
+    } else {
+      ;
+    }
+
+    this.todos.push(todo);
+    return this.lastId;
   }
 
   // Simulate DELETE /todos/:id
