@@ -56,8 +56,8 @@ export class TodoDataService {
       .pop();
   }
 
-  // Toggle todo complete
-  toggleTodoComplete(todo: Todo) {
+  // Toggle to do complete
+  toggleTodoComplete(todo: Todo): Todo {
     const updatedTodo = this.updateTodoById(todo.id, {
       complete: !todo.complete
     });
