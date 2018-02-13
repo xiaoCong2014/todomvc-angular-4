@@ -17,17 +17,8 @@
 
         <!-- region 每一行 -->
 
-        <div class="view">
-
-          <!--单选多选框 -->
-          <input class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
-
-          <label>{{todo.title}}</label>
-
-          <!--移除按钮-->
-          <button class="destroy" (click)="removeTodo(todo)"></button>
-
-        </div>
+        <!--自己写的-->
+        <app-todo-in-list [todo] = 'todo'></app-todo-in-list>
 
         <!-- endregion 每一行 -->
 
