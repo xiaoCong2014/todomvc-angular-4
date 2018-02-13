@@ -26,13 +26,13 @@ export class AppComponent {
     this.newTodo = new Todo();
   }
 
-  toggleTodoComplete(todo) {
-    this.todoDataService.toggleTodoComplete(todo);
-  }
+  // toggleTodoComplete(newTodo) {
+  //   this.todoDataService.toggleTodoComplete(newTodo);
+  // }
 
-  removeTodo(todo) {
-    this.todoDataService.deleteTodoById(todo.id);
-  }
+  // removeTodo(newTodo) {
+  //   this.todoDataService.deleteTodoById(newTodo.id);
+  // }
 
   get todos() {
     return this.todoDataService.getAllTodos();
