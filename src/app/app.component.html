@@ -1,20 +1,50 @@
-<section class="todoapp">
+<div class="todoapp">
+
   <header class="header">
-    <h1>Todos</h1>
-    <input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()">
+
+    <div class="my-title">Todos</div>
+    <input class="new-todo"
+           placeholder="请输入备忘事件 What needs to be done?"
+           autofocus=""
+           [(ngModel)]="newTodo.title"
+           (keyup.enter)="addTodo()">
+
   </header>
+
   <section class="main" *ngIf="todos.length > 0">
     <ul class="todo-list">
       <li *ngFor="let todo of todos" [class.completed]="todo.complete">
+
+        <!-- region 每一行 -->
+
         <div class="view">
+
+          <!--单选多选框 -->
           <input class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
+
           <label>{{todo.title}}</label>
+
+          <!--移除按钮-->
           <button class="destroy" (click)="removeTodo(todo)"></button>
+
         </div>
+
+        <!-- endregion 每一行 -->
+
       </li>
     </ul>
   </section>
-  <footer class="footer" *ngIf="todos.length > 0">
-    <span class="todo-count"><strong>{{todos.length}}</strong> {{todos.length == 1 ? 'item' : 'items'}} left</span>
+
+  <!--显示个数-->
+  <footer class="footer" *ngIf = "todos.length > 0">
+    <span class="todo-count">
+      <strong>{{todos.length}}</strong> {{todos.length == 1 ? 'item' : 'items'}} left ,
+      已有 <strong>{{todos.length}}</strong> 条记录
+    </span>
+
+    <!--<h3>Todo22</h3>-->
   </footer>
-</section>
+
+  <!--<h1>Todo22</h1>-->
+
+</div>

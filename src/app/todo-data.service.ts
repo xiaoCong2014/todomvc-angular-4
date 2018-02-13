@@ -8,7 +8,11 @@ export class TodoDataService {
   // automatic incrementing of id's
   lastId: number = 0;
 
-  // Placeholder for todo's
+  /**
+   * 数据放在这里  <br>
+   * Placeholder for to do's
+   * @type {Array}
+   */
   todos: Todo[] = [];
 
   constructor() {
@@ -17,7 +21,7 @@ export class TodoDataService {
   // Simulate POST /todos
   addTodo(todo: Todo): TodoDataService {
     if (!todo.id) {
-      todo.id = ++this.lastId;
+      todo.id = this.lastId + 1;
     }
     this.todos.push(todo);
     return this;
@@ -32,7 +36,7 @@ export class TodoDataService {
 
   // Simulate PUT /todos/:id
   updateTodoById(id: number, values: Object = {}): Todo {
-    let todo = this.getTodoById(id);
+    const todo = this.getTodoById(id);
     if (!todo) {
       return null;
     }
@@ -53,8 +57,8 @@ export class TodoDataService {
   }
 
   // Toggle todo complete
-  toggleTodoComplete(todo: Todo){
-    let updatedTodo = this.updateTodoById(todo.id, {
+  toggleTodoComplete(todo: Todo) {
+    const updatedTodo = this.updateTodoById(todo.id, {
       complete: !todo.complete
     });
     return updatedTodo;

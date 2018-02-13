@@ -10,6 +10,10 @@ import {TodoDataService} from './todo-data.service';
 })
 export class AppComponent {
 
+  /**
+   * 最新的数据 , 临时的
+   * @type {Todo}
+   */
   newTodo: Todo = new Todo();
 
   constructor(private todoDataService: TodoDataService) {
@@ -17,6 +21,8 @@ export class AppComponent {
 
   addTodo() {
     this.todoDataService.addTodo(this.newTodo);
+
+    // 清空
     this.newTodo = new Todo();
   }
 

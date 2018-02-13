@@ -67,9 +67,16 @@ body {
 	color: #e6e6e6;
 }
 
-.todoapp h1 {
+/*标题颜色
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+*/
+.my-title {
 	position: absolute;
-	top: -155px;
+	top: -75px;
 	width: 100%;
 	font-size: 100px;
 	font-weight: 100;
@@ -80,6 +87,18 @@ body {
 	text-rendering: optimizeLegibility;
 }
 
+.todoapp h1 {
+  position: absolute;
+  top: -155px;
+  width: 100%;
+  font-size: 100px;
+  font-weight: 100;
+  text-align: center;
+  color: rgba(175, 47, 47, 0.15);
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+}
 .new-todo,
 .edit {
 	position: relative;
@@ -251,9 +270,9 @@ label[for='toggle-all'] {
 .footer:before {
 	content: '';
 	position: absolute;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
 	height: 50px;
 	overflow: hidden;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
